@@ -1,0 +1,15 @@
+{% extends 'CoreBundle::layout.html.twig' %}
+
+{% block home_body -%}
+    <h1>Applications creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('applications') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

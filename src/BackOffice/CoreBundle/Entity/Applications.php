@@ -21,12 +21,6 @@ class Applications
      */
     private $id;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->pages = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
     /**
      * @ORM\OneToMany(targetEntity="BackOffice\CoreBundle\Entity\Pages", mappedBy="applications", cascade={"remove"})
      * @ORM\JoinColumn(nullable=true)
@@ -53,6 +47,10 @@ class Applications
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+
+    public function __toString(){
+        return $this->name;
+    }
 
 
     /**
@@ -160,7 +158,7 @@ class Applications
     /**
      * Get pages
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPages()
     {
